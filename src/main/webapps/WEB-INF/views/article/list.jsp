@@ -83,13 +83,14 @@ function namosw_cell_rollout(cell)
 </td>
                 </tr>
                 
+                <!-- 기사리스트 반복... -->
              	<c:forEach var="list" items="${articleList}" varStatus="sts">   
                 <tr>
                     <td width="44" height="35">
                         <p align="center"><font size="2" face="맑은 고딕"><b>${sts.count}</b></font></p>
 					</td>
                     <td width="356">
-                        <p align="left"><font size="2" face="맑은 고딕">${list.TITLE}</font></p>
+                        <p align="left"><font size="2" face="맑은 고딕"><a href="view/${list.IDX}">${list.TITLE}</a></font></p>
 					</td>
                     <td width="144">
                         <p align="center"><font size="2" face="맑은 고딕">${list.REGDATE}</font></p>

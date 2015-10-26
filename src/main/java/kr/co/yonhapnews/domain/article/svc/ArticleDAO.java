@@ -14,4 +14,5 @@ public interface ArticleDAO {
 	
 	public int insArticle(ArticleDVO articleDVO);
 	
+	public ArticleDVO selArticle(int IDX);
 }

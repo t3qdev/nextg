@@ -13,4 +13,5 @@ public interface ArticleBIZ {
 	
 	public int writeArticle(ArticleBVO articleBVO);
 	
+	public ArticleBVO viewArticle( int articleNum);
 }

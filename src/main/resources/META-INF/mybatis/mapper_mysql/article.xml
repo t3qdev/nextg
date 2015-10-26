@@ -19,4 +19,13 @@
 		]]>	
 	</insert>
 
+
+
+	<select id="selArticle" parameterType="int" resultType="ArticleDVO" >
+		<![CDATA[
+			SELECT * FROM  ARTICLE WHERE IDX=#{IDX}
+		]]> 
+	</select>
+	
+
 </mapper>	

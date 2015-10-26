@@ -26,8 +26,9 @@ public interface ArticleSVC {
 	 * @param articleDVO
 	 * @return
 	 */
-	public ArticleSVO selArticle(ArticleSVO  articleSVO);
+	public ArticleSVO selArticle(int articleNum);
 
  
+	
 	
 }

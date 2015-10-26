@@ -31,19 +31,14 @@ public class ArticleBIZImpl implements ArticleBIZ {
 	 */
 	@Override
 	public List<ArticleBVO> selListArticle() {
-		
-		
 		List<ArticleBVO>  list = new ArrayList<ArticleBVO>();
-		
 		List<ArticleSVO>  listArticle = articleSVC.selListArticle();
- 
-		for(int i=0; i<listArticle.size(); i++){
+ 		for(int i=0; i<listArticle.size(); i++){
 			ArticleBVO articleBVO = new ArticleBVO();
 			BeanUtils.copyProperties(listArticle.get(i) ,articleBVO );	
 			list.add(articleBVO);			  
 		}
- 
-		return list;
+ 		return list;
 	}
 
 	/**
@@ -52,13 +47,21 @@ public class ArticleBIZImpl implements ArticleBIZ {
 	 */
 	@Override
 	public int writeArticle(ArticleBVO articleBVO) {
-
 		ArticleSVO  articleSVO = new ArticleSVO();
 		BeanUtils.copyProperties(articleBVO, articleSVO);
-		
 		articleSVC.writeArticle(articleSVO);
-		
 		return 0;
 	}
 
+	/**
+	 * 기사 보기
+	 */
+	@Override
+	public ArticleBVO viewArticle(int articleNum) {
+		ArticleBVO articleBVO = new ArticleBVO();
+		ArticleSVO  articleSVO = articleSVC.selArticle(articleNum);
+		BeanUtils.copyProperties( articleSVO , articleBVO );
+		return articleBVO;
+	}
+	
 }

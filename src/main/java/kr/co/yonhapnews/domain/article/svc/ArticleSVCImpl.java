@@ -32,12 +32,7 @@ public class ArticleSVCImpl implements ArticleSVC {
 		return articleDAO.insArticle(articleDVO);	
 	}
 
-	@Override
-	public ArticleSVO selArticle(ArticleSVO articleSVO) {
  
-		return null;
-	}
-
 	@Override
 	public List<ArticleSVO> selListArticle() {
 		
@@ -49,6 +44,14 @@ public class ArticleSVCImpl implements ArticleSVC {
 			list.add(articleSVO);
 		} 
 		return list;
+	}
+
+	@Override
+	public ArticleSVO selArticle(int articleNum) {
+		ArticleSVO articleSVO = new ArticleSVO();
+		ArticleDVO articleDVO = articleDAO.selArticle(articleNum);
+		BeanUtils.copyProperties(articleDVO , articleSVO );
+		return articleSVO;
 	}
 
 }

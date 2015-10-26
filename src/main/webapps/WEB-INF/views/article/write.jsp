@@ -73,7 +73,7 @@ $(function(){
         <td width="700" bordercolor="white" align="left" valign="top" bgcolor="white">
             <p>&nbsp;</p>
             <p>&nbsp;&nbsp;&nbsp;<font face="맑은 고딕"><b>&nbsp;&nbsp;◆ 정치부</b></font></p>
-            <form action="writing" method="post">
+            <form action="writing" id="reg" method="post">
             <table border="1" align="center" width="640" bgcolor="#FAFAFA" bordercolor="#CCCCCC" cellspacing="0" bordercolordark="#999999" bordercolorlight="white">
                 <tr>
                     <td width="111" bgcolor="#D7E4BD" height="35">
@@ -81,9 +81,10 @@ $(function(){
 				</td>
                     <td width="519" bgcolor="#FAFAFA">
                             <p align="left">&nbsp;&nbsp;<font size="2" face="맑은 고딕">
-                            <input type="text" name="TITLE" maxlength="20" size="70" 
+                            <input type="text" name="TITLE" maxlength="120" size="65" 
                             class="validate[required]"
-                            style="background-color:rgb(235,241,222); padding:2px; border-width:1px; border-color:rgb(153,153,153); border-style:solid;"></font></p>
+                            style="background-color:rgb(235,241,222); padding:2px; border-width:1px; border-color:rgb(153,153,153); border-style:solid;">
+							</p>
 					</td>
                 </tr>
                 <tr>
@@ -92,9 +93,10 @@ $(function(){
 					</td>
                     <td width="519" bgcolor="#FAFAFA">
                         <p align="left">&nbsp;&nbsp;<font size="2" face="맑은 고딕">
-                        <input type="text" name="WRITER" maxlength="20" size="16" 
+                        <input type="text" name="WRITER" maxlength="30" size="16" 
                          class="validate[required]"
-                         style="background-color:rgb(232,236,216); padding:2px; border-width:1px; border-color:rgb(153,153,153); border-style:solid;"></font></p>
+                         style="background-color:rgb(232,236,216); padding:2px; border-width:1px; border-color:rgb(153,153,153); border-style:solid;">
+						</p>
 					</td>
                 </tr>
                 <tr>
@@ -107,7 +109,6 @@ $(function(){
 	                            <option value="0" selected>비설정</option>
 	                            <option value="1">설정</option>
 							</select> </p>
-
 					</td>
                 </tr>
                 <tr>
@@ -118,9 +119,9 @@ $(function(){
                         <p>&nbsp;<textarea name="CONTENT" rows="15" cols="61"  class="validate[required]"
                         style="background-color:rgb(232,236,216); padding:2px; border-width:1px; border-color:rgb(153,153,153); border-style:solid;"></textarea></p>
                         <p align="center">
-	                        <input type=image src="${ctx_res}img/btn_write.jpg" width="65" height="20" border="0" hspace="10">
-	                        <img src="${ctx_res}img/btn_pause.jpg" width="65" height="20" border="0" hspace="10">
-	                        <a href='list'><img src="${ctx_res}img/btn_cancel.jpg" width="65" height="20" border="0" hspace="10"></a>
+	                        <input type=image src="${ctx_res}/img/btn_write.jpg" width="65" height="20" border="0" hspace="10">
+	                        <img src="${ctx_res}/img/btn_pause.jpg" width="65" height="20" border="0" hspace="10">
+	                        <a href='list'><img src="${ctx_res}/img/btn_cancel.jpg" width="65" height="20" border="0" hspace="10"></a>
                         </p>
                         <p>&nbsp;</p>
 					</td>
