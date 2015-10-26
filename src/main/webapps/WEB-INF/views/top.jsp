@@ -10,5 +10,20 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>뉴스데모</title>
+<script type="text/javascript" src="${ctx_res}/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="${ctx_res}/js/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="${ctx_res}/js/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="${ctx_res}/css/ui/jquery-ui.min.css" />
+
+<script type="text/javascript" src="${ctx_res}/js/jquery.placeholder.min.js"></script>
+
+<script type="text/javascript" src="${ctx_res}/js/jquery.validationEngineM.js?v=2"></script>
+<script type="text/javascript" src="${ctx_res}/js/jquery.validationEngine-ko.js"></script>
+<link rel="stylesheet" type="text/css" href="${ctx_res}/css/validationEngine/validationEngine.jquery.css" />
+
+<script src="${ctx_res}/js/jquery.SHPaging-0.1.js"></script>
+<script src="${ctx_res}/js/jquery.SHVirtualSubmit.js"></script>
+<script src="${ctx_res}/js/jquery.SHPaging.post.js"></script>
+
 </head>
  

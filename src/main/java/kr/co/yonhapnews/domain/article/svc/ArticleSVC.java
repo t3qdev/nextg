@@ -1,8 +1,9 @@
 package kr.co.yonhapnews.domain.article.svc;
 
 import java.util.List;
+import java.util.Map;
 
-import kr.co.yonhapnews.domain.article.vo.ArticleDVO;
+import kr.co.yonhapnews.domain.article.vo.ArticleSVO;
 
 public interface ArticleSVC {
 	
@@ -11,13 +12,13 @@ public interface ArticleSVC {
 	 * @param articleDVO
 	 * @return
 	 */
-	public int writeArticle(ArticleDVO  articleDVO);
+	public int writeArticle(ArticleSVO articleSVO);
 	
 	/**
 	 * 기사 리스트 가져오기
 	 * @return
 	 */
-	public List<ArticleDVO> selListArticle();
+	public List<ArticleSVO> selListArticle();
 	
 	
 	/**
@@ -25,7 +26,8 @@ public interface ArticleSVC {
 	 * @param articleDVO
 	 * @return
 	 */
-	public ArticleDVO selArticle(ArticleDVO  articleDVO);
-	
+	public ArticleSVO selArticle(ArticleSVO  articleSVO);
+
+ 
 	
 }

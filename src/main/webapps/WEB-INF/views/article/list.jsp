@@ -82,120 +82,23 @@ function namosw_cell_rollout(cell)
                         <p align="center"><font size="2" face="맑은 고딕"><b>부서</b></font></p>
 </td>
                 </tr>
+                
+             	<c:forEach var="list" items="${articleList}" varStatus="sts">   
                 <tr>
                     <td width="44" height="35">
-                        <p align="center"><font size="2" face="맑은 고딕"><b>64</b></font></p>
-</td>
+                        <p align="center"><font size="2" face="맑은 고딕"><b>${sts.count}</b></font></p>
+					</td>
                     <td width="356">
-                        <p align="left"><font size="2" face="맑은 고딕">&nbsp;&nbsp;동급생 폭행 혐의 대학생 1명 '메르스' 의심 증세...</font></p>
-</td>
+                        <p align="left"><font size="2" face="맑은 고딕">${list.TITLE}</font></p>
+					</td>
                     <td width="144">
-                        <p align="center"><font size="2" face="맑은 고딕">2015.06.25 &nbsp;13:57:23</font></p>
-</td>
+                        <p align="center"><font size="2" face="맑은 고딕">${list.REGDATE}</font></p>
+					</td>
                     <td width="78" align="center" valign="middle">
-                        <p align="center"><font size="2" face="맑은 고딕">사회부</font></p>
-</td>
+                        <p align="center"><font size="2" face="맑은 고딕">${list.WRITER}</font></p>
+					</td>
                 </tr>
-                <tr>
-                    <td width="44" height="35">
-                        <p align="center"><font size="2" face="맑은 고딕"><b>63</b></font></p>
-</td>
-                    <td width="356">
-                        <p align="left"><font size="2" face="맑은 고딕">&nbsp;&nbsp;합석거절여성과 닮은 행인'묻지마 폭행'…징역 15년...</font></p>
-</td>
-                    <td width="144">
-                        <p align="center"><font size="2" face="맑은 고딕">2015.06.25 &nbsp;13:52:11</font></p>
-</td>
-                    <td width="78" align="center" valign="middle">                        <p align="center"><font size="2" face="맑은 고딕">문화부</font></p>
-</td>
-                </tr>
-                <tr>
-                    <td width="44" height="35">
-                        <p align="center"><font size="2" face="맑은 고딕"><b>62</b></font></p>
-</td>
-                    <td width="356">
-                        <p align="left"><font size="2" face="맑은 고딕">&nbsp;&nbsp;&quot;수면 방해하는 새 쫓으려 새총으로 쇠구슬 쐈다&quot; </font></p>
-</td>
-                    <td width="144">
-                        <p align="center"><font size="2" face="맑은 고딕">2015.06.25 &nbsp;13:47:36</font></p>
-</td>
-                    <td width="78" align="center" valign="middle">                        <p align="center"><font size="2" face="맑은 고딕">정치부</font></p>
-</td>
-                </tr>
-                <tr>
-                    <td width="44" height="35">
-                        <p align="center"><font size="2" face="맑은 고딕"><b>61</b></font></p>
-</td>
-                    <td width="356">
-                        <p align="left"><font size="2" face="맑은 고딕">&nbsp;&nbsp;빈 사무실 500곳 턴 '대도'가 검거되자 한 말은...</font></p>
-</td>
-                    <td width="144">
-                        <p align="center"><font size="2" face="맑은 고딕">2015.06.25 &nbsp;13:24:28</font></p>
-</td>
-                    <td width="78">
-                        <p align="center"><font size="2" face="맑은 고딕">사회부</font></p>
-</td>
-                </tr>
-                <tr>
-                    <td width="44" height="35">
-                        <p align="center"><font size="2" face="맑은 고딕"><b>60</b></font></p>
-</td>
-                    <td width="356">                        <p align="left"><font size="2" face="맑은 고딕">&nbsp;&nbsp;'20년 차명 인생' 90대, 61년만에 국가유공자...</font></p>
-</td>
-                    <td width="144">                        <p align="center"><font size="2" face="맑은 고딕">2015.06.25 &nbsp;13:07:19</font></p>
-</td>
-                    <td width="78">
-                        <p align="center"><font size="2" face="맑은 고딕">사회부</font></p>
-</td>
-                </tr>
-                <tr>
-                    <td width="44" height="35">
-                        <p align="center"><font size="2" face="맑은 고딕"><b>59</b></font></p>
-</td>
-                    <td width="356">                        <p align="left"><font size="2" face="맑은 고딕">&nbsp;&nbsp;'현금결제 유도' ATM기까지 설치한 성매매업소 </font></p>
-</td>
-                    <td width="144">                        <p align="center"><font size="2" face="맑은 고딕">2015.06.25 &nbsp;12:50:44</font></p>
-</td>
-                    <td width="78">
-                        <p align="center"><font size="2" face="맑은 고딕">경제부</font></p>
-</td>
-                </tr>
-                <tr>
-                    <td width="44" height="35">
-                        <p align="center"><font size="2" face="맑은 고딕"><b>58</b></font></p>
-</td>
-                    <td width="356">                        <p align="left"><font size="2" face="맑은 고딕">&nbsp;&nbsp;한국인 조종하던 드론, 밀라노 두오모 성당에 충돌 </font></p>
-</td>
-                    <td width="144">                        <p align="center"><font size="2" face="맑은 고딕">2015.06.25 &nbsp;12:33:13</font></p>
-</td>
-                    <td width="78">
-                        <p align="center"><font size="2" face="맑은 고딕">정치부</font></p>
-</td>
-                </tr>
-                <tr>
-                    <td width="44" height="35">
-                        <p align="center"><font size="2" face="맑은 고딕"><b>57</b></font></p>
-</td>
-                    <td width="356">                        <p align="left"><font size="2" face="맑은 고딕">&nbsp;&nbsp;45년 만에 아내 살해 누명 벗은 캐나다 75세 노인...</font></p>
-</td>
-                    <td width="144">                        <p align="center"><font size="2" face="맑은 고딕">2015.06.25 &nbsp;12:21:03</font></p>
-</td>
-                    <td width="78">
-                        <p align="center"><font size="2" face="맑은 고딕">연예부</font></p>
-</td>
-                </tr>
-                <tr>
-                    <td width="44" height="35">
-                        <p align="center"><font size="2" face="맑은 고딕"><b>56</b></font></p>
-</td>
-                    <td width="356">                        <p align="left"><font size="2" face="맑은 고딕">&nbsp;&nbsp;합석거절여성과 닮은 행인'묻지마 폭행'…징역 15년...</font></p>
-</td>
-                    <td width="144">                        <p align="center"><font size="2" face="맑은 고딕">2015.06.25 &nbsp;13:52:11</font></p>
-</td>
-                    <td width="78"><p align="center"><font size="2" face="맑은 고딕">문화부</font></p>
-</td>
-                </tr>
-
+                </c:forEach> 
 
             </table>
 

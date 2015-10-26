@@ -4,16 +4,19 @@
 <mapper namespace="kr.co.yonhapnews.domain.article.svc.ArticleDAO">
 
 	<cache/>
-
-	<insert id="insCrsLog" parameterType="ArticleDVO">
-		<![CDATA[ 		
-		INSERT INTO ARTICLE (title,content,writer,state,regdate) values (#{TITLE},#{CONTENT},#{WRITER},'R',NOW())
-		]]>	
-	</insert>
-	<select id="selLog" resultType="ArticleDVO" parameterType="ArticleDVO">
+	
+	
+	<select id="selListArticle" resultType="ArticleDVO">
 		<![CDATA[
-			SELECT *
-			FROM ARTICLE  
+			SELECT * FROM  ARTICLE
 		]]> 
 	</select>
+	
+	
+	<insert id="insArticle" parameterType="ArticleDVO">
+		<![CDATA[ 		
+		INSERT INTO ARTICLE (TITLE,CONTENT,WRITER,STATE,REGDATE) values (#{TITLE},#{CONTENT},#{WRITER},#{STATE},NOW())
+		]]>	
+	</insert>
+
 </mapper>	
