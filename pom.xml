@@ -148,6 +148,13 @@
 			<version>2.6</version>
 		</dependency>
 		
+		<!-- JackSon json 파싱등.. -->
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>1.9.13</version>
+		</dependency>
+		
 		
 		<!-- Database -->
 		

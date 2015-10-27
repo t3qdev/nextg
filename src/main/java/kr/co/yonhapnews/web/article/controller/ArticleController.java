@@ -1,10 +1,14 @@
 package kr.co.yonhapnews.web.article.controller;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
 
+import org.codehaus.jackson.JsonGenerationException;
+import org.codehaus.jackson.map.JsonMappingException;
+import org.codehaus.jackson.map.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -16,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import kr.co.yonhapnews.biz.article.svc.ArticleBIZ;
 import kr.co.yonhapnews.biz.article.vo.ArticleBVO;
+import kr.co.yonhapnews.web.common.UserUtils;
 
 
 @Controller
@@ -35,9 +40,24 @@ public class ArticleController {
  	 * @return
  	 */
 	@RequestMapping(value={"","/","/list"})
-	public String articleList(Model model, @RequestParam Map<String, Object> map){
+	public String articleList(Model model, @RequestParam Map<String, Object> map) throws Exception{
 		
-		List<ArticleBVO> articleList = articleBIZ.selListArticle();
+		
+		/*페이징 처리*/
+		map.put("ROW_PER_PAGE", 5); //페이지당 리스트수
+		int page = (map.get("PAGE") != null )?  Integer.parseInt((String) map.get("PAGE")):1;
+		map.put("PAGE", page);
+		int total = articleBIZ.selArticleCnt(map);
+		map.put("TOTAL", total);
+		Map<String,Object> temp = UserUtils.paging(page, total, (int) map.get("ROW_PER_PAGE"), "DESC");
+		map.putAll(temp);
+		model.addAttribute("paging", map);
+		
+	    ObjectMapper mapper = new ObjectMapper();
+	    String mapJson = mapper.writeValueAsString(map);  
+	    model.addAttribute("POST_DATA", mapJson);	
+		
+		List<ArticleBVO> articleList = articleBIZ.selListArticle(map);
 		model.addAttribute("articleList", articleList);
 		
 		logger.debug("SVO to BVO");
@@ -46,7 +66,7 @@ public class ArticleController {
 
 	/**
 	 * 기사 쓰기화면
-	 * @param model
+	 * @param model	
 	 * @return
 	 */
 	@RequestMapping(value={"/write"})

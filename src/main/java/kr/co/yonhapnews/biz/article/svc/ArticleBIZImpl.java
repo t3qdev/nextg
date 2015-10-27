@@ -30,9 +30,9 @@ public class ArticleBIZImpl implements ArticleBIZ {
 	 * 여러가지 서비스를 
 	 */
 	@Override
-	public List<ArticleBVO> selListArticle() {
+	public List<ArticleBVO> selListArticle(Map map) {
 		List<ArticleBVO>  list = new ArrayList<ArticleBVO>();
-		List<ArticleSVO>  listArticle = articleSVC.selListArticle();
+		List<ArticleSVO>  listArticle = articleSVC.selListArticle(map);
  		for(int i=0; i<listArticle.size(); i++){
 			ArticleBVO articleBVO = new ArticleBVO();
 			BeanUtils.copyProperties(listArticle.get(i) ,articleBVO );	
@@ -62,6 +62,11 @@ public class ArticleBIZImpl implements ArticleBIZ {
 		ArticleSVO  articleSVO = articleSVC.selArticle(articleNum);
 		BeanUtils.copyProperties( articleSVO , articleBVO );
 		return articleBVO;
+	}
+
+	@Override
+	public int selArticleCnt(Map map) {
+		return articleSVC.selArticleCnt(map);
 	}
 	
 }

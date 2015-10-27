@@ -11,7 +11,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
-import kr.co.yonhapnews.biz.article.vo.ArticleBVO;
 import kr.co.yonhapnews.domain.article.vo.ArticleDVO;
 import kr.co.yonhapnews.domain.article.vo.ArticleSVO;
 
@@ -28,16 +27,16 @@ public class ArticleSVCImpl implements ArticleSVC {
 	public int writeArticle(ArticleSVO articleSVO) {
 
 		ArticleDVO  articleDVO = new ArticleDVO();
-		BeanUtils.copyProperties(articleSVO, articleDVO);
+		BeanUtils.copyProperties(articleSVO, articleDVO);	
 		return articleDAO.insArticle(articleDVO);	
 	}
 
  
 	@Override
-	public List<ArticleSVO> selListArticle() {
+	public List<ArticleSVO> selListArticle(Map map) {
 		
 		List<ArticleSVO>  list = new ArrayList<ArticleSVO>();
-		List<ArticleDVO> listArticle = articleDAO.selListArticle();
+		List<ArticleDVO> listArticle = articleDAO.selListArticle(map);
 		for(int i=0; i < listArticle.size() ; i++){
 			ArticleSVO articleSVO = new ArticleSVO();
 			BeanUtils.copyProperties(listArticle.get(i) , articleSVO );
@@ -53,5 +52,14 @@ public class ArticleSVCImpl implements ArticleSVC {
 		BeanUtils.copyProperties(articleDVO , articleSVO );
 		return articleSVO;
 	}
+
+
+	@Override
+	public int selArticleCnt(Map map) {
+
+		return articleDAO.selArticleCnt(map);
+	}
+
+ 
 
 }

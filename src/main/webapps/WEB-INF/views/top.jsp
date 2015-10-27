@@ -21,9 +21,15 @@
 <script type="text/javascript" src="${ctx_res}/js/jquery.validationEngine-ko.js"></script>
 <link rel="stylesheet" type="text/css" href="${ctx_res}/css/validationEngine/validationEngine.jquery.css" />
 
-<script src="${ctx_res}/js/jquery.SHPaging-0.1.js"></script>
+<script src="${ctx_res}/js/jquery.SHVirtualForm.js"></script>
 <script src="${ctx_res}/js/jquery.SHVirtualSubmit.js"></script>
 <script src="${ctx_res}/js/jquery.SHPaging.post.js"></script>
+<link rel="stylesheet" type="text/css" href="${ctx_res}/css/SHPaging.skin.1.css" />
 
+<script type="text/javascript">
+/* $(function(){
+    $.ajaxSetup({ cache: false ,async : true, type: "POST",dataType:"json" ,contentType:"application/json"});	
+}); */
+</script>
 </head>
  

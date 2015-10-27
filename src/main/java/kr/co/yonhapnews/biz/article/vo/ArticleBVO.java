@@ -1,8 +1,8 @@
 package kr.co.yonhapnews.biz.article.vo;
 
-import java.io.Serializable;
+import kr.co.yonhapnews.web.common.PagingVo;
 
-public class ArticleBVO implements Serializable {
+public class ArticleBVO extends PagingVo {
 
 	private static final long serialVersionUID = 1L;
 	
@@ -18,7 +18,7 @@ public class ArticleBVO implements Serializable {
 		return IDX;
 	}
 	public void setIDX(int iDX) {
-		IDX = iDX;
+		IDX = iDX;	
 	}
 	public String getTITLE() {
 		return TITLE;

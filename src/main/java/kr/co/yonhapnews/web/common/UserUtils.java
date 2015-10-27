@@ -5,6 +5,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -13,6 +14,33 @@ import org.springframework.beans.BeanUtils;
 
 public final class UserUtils {
 
+	/**
+	 * 페이징
+	 * @param pAGE
+	 * @param tOTAL
+	 * @param rOW_PER_PAGE
+	 * @param ORD_BY
+	 * @return
+	 */
+	public static Map<String,Object> paging(int pAGE, int tOTAL , int rOW_PER_PAGE ,String ORD_BY){
+		Map map = new HashMap();
+		map.put("PAGE", pAGE);
+		map.put("TOTAL", tOTAL);
+		map.put("ROW_PER_PAGE", rOW_PER_PAGE);
+		int rangeStart = (pAGE-1)*rOW_PER_PAGE +1;
+		map.put("RANGE_START", rangeStart);
+		map.put("RANGE_END", rangeStart + rOW_PER_PAGE-1);
+		
+		map.put("LIMIT_START", rangeStart-1);
+		
+		if( "DESC".equals(ORD_BY) ){
+			map.put("CNT", tOTAL-rangeStart+1);
+		}else{
+			map.put("CNT", rangeStart);
+		}
+		return map;
+	}
+	
 	/**
 	 * List 복사
 	 * @param src

@@ -33,7 +33,36 @@ function namosw_cell_rollout(cell)
     cell.className   = cell.classBackup;
   }
 }
-// -->
+ 
+$(function(){
+	$("#paging").SHPaging({
+		total_row : ${paging.TOTAL},     //총 글수
+		rows_per_page : ${paging.ROW_PER_PAGE} , // 페이지당 글수
+		current_page : ${paging.PAGE} ,   // 현 페이지
+		display_next : true ,   // 다음 버턴
+		display_skip : false    // 다음 10페이지 버턴
+	});
+		
+});		
+var post_data = ${POST_DATA};  
+function go_page(page){
+	$.extend(post_data,{"PAGE":page});	
+	var $Form = $(document.createElement('form')).attr("target","_top").attr("method","post");
+	 $.each(post_data ,function(jName,jValue){
+			$Form.append( $(document.createElement('input')).attr("type","hidden").attr("name", jName ).val(jValue));
+	 }); 
+	 $Form.submit();
+}
+function go_view(json ){
+ 	$.extend(post_data,json);	
+	var action = 'ptnView/'+post_data.ISSUE_HASH
+	var $Form = $(document.createElement('form')).attr("target","_top").attr("method","post").attr("action",action);
+	 $.each(post_data ,function(jName,jValue){
+			$Form.append( $(document.createElement('input')).attr("type","hidden").attr("name", jName ).val(jValue));
+	 }); 
+	 $Form.submit();
+}
+//-->
 </script>
 </head>
 
@@ -87,7 +116,7 @@ function namosw_cell_rollout(cell)
              	<c:forEach var="list" items="${articleList}" varStatus="sts">   
                 <tr>
                     <td width="44" height="35">
-                        <p align="center"><font size="2" face="맑은 고딕"><b>${sts.count}</b></font></p>
+                        <p align="center"><font size="2" face="맑은 고딕"><b>${paging.CNT - sts.index}</b></font></p>
 					</td>
                     <td width="356">
                         <p align="left"><font size="2" face="맑은 고딕"><a href="view/${list.IDX}">${list.TITLE}</a></font></p>
@@ -102,11 +131,15 @@ function namosw_cell_rollout(cell)
                 </c:forEach> 
 
             </table>
+            <div id="paging"></div>
 
  
 </td>
     </tr>
 </table>
+
+
+
 </body>
 
 </html>
