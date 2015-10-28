@@ -11,10 +11,17 @@
 view / INDEX 
 
 
+해야 될거
+1. 트랜잭션
+2. 입력값 검증
+3. 스프링시큐리티
 
+ 
 <a href="login">로그인 페이지</a>
 
 
 <a href="article/">기사 리스트</a>
+</body>
+</body>
 </body>
 </html>

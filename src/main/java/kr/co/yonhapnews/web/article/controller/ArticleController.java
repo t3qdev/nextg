@@ -13,10 +13,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import kr.co.yonhapnews.biz.article.svc.ArticleBIZ;
 import kr.co.yonhapnews.biz.article.vo.ArticleBVO;
@@ -81,14 +84,22 @@ public class ArticleController {
 	 * @param articleBVO
 	 * @return
 	 */
-	@RequestMapping(value={"/writing"})
-	public String articleWrite(Model model , @ModelAttribute("ArticleBVO") ArticleBVO articleBVO){
+	@RequestMapping(value={"/writing"},method={RequestMethod.POST})
+	public String articleWrite(Model model , @ModelAttribute("ArticleBVO") ArticleBVO articleBVO , BindingResult result, RedirectAttributes redirectAttr){
  		
-		int result = 0;	
+		// Validator 
+		new ArticleValidator().validate(articleBVO, result); 
+		if(result.hasErrors()){
+			//result.getModel();
+			redirectAttr.addFlashAttribute("error", result.getAllErrors() );
+			return "redirect:/article/write";
+		}
+		
+		int writeRes = 0;	
 		//TODO 엠바고처리 필요.
 		articleBVO.setSTATE("S");
 		
-		result = articleBIZ.writeArticle(articleBVO);
+		writeRes = articleBIZ.writeArticle(articleBVO);
 		//TODO 오류에 대한 처리 필요 
 		
 		//TODO 정상 처리후 리턴
