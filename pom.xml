@@ -233,9 +233,8 @@
         <artifactId>maven-war-plugin</artifactId>
         <version>2.4</version>
         <configuration>
-          <warSourceDirectory>WebContent</warSourceDirectory>
+          <warSourceDirectory>src/main/webapps</warSourceDirectory>
           <failOnMissingWebXml>false</failOnMissingWebXml>
-           <warName>${artifactId}.war</warName>
         </configuration>
       </plugin>
         </plugins>
