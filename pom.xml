@@ -5,6 +5,7 @@
     <artifactId>nextg</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>nextg base</name>
+    <packaging>war</packaging>
     <description>nextg base template</description>
 
     <properties>
