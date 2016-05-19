@@ -8,7 +8,7 @@
     <description>nextg base template</description>
 
     <properties>
-        <java-version>1.7</java-version>
+        <java-version>1.7</java-version>8
         <org.springframework-version>4.2.2.RELEASE</org.springframework-version>
         <org.security-version>4.0.2.RELEASE</org.security-version>
         <org.aspectj-version>1.8.7</org.aspectj-version>
@@ -228,6 +228,16 @@
                     <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
+	      <plugin>
+	        <artifactId>maven-war-plugin</artifactId>
+	        <version>2.4</version>
+	        <configuration>
+	          <warSourceDirectory>WebContent</warSourceDirectory>
+	          <failOnMissingWebXml>false</failOnMissingWebXml>
+ 				<warName>${artifactId}.war</warName>
+	        </configuration>
+	      </plugin>
+
         </plugins>
     </build>
 
