@@ -11,7 +11,7 @@
         <connection>scm:git:https://github.com/t3qdev/nextg.git</connection>
         <url>http://github.com/t3qdev/nextg</url>
         <developerConnection>scm:git:https://github.com/t3qdev/nextg.git</developerConnection>
-      <tag>HEAD</tag>
+      <tag>nextg-0.0.1</tag>
   </scm>
 
     <properties>
