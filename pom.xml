@@ -215,6 +215,7 @@
             <url>http://192.168.0.115:8080/nexus/content/repositories/releases</url>
         </repository>
         <snapshotRepository>
+            <uniqueVersion>true</uniqueVersion>
             <id>snapshots</id>
             <url>http://192.168.0.115:8080/nexus/content/repositories/snapshots</url>
         </snapshotRepository>

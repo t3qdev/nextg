@@ -37,7 +37,7 @@
 		</property>
 	</bean>
 
-	<context:component-scan base-package="com.edutotal.crs" />
+	<context:component-scan base-package="kr.co.yonhapnews" />
 <!-- dataSource지정 -->
  	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="${DB_DRIVER}"/>
