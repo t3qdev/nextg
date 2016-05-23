@@ -271,6 +271,7 @@
                 <configuration>
                     <autoVersionSubmodules>true</autoVersionSubmodules>
                     <goals>deploy</goals>
+                    <arguments>-Dmaven.javadoc.skip=true</arguments>
                 </configuration>
             </plugin>
         </plugins>
