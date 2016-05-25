@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>kr.co.yonhapnews</groupId>
     <artifactId>nextg</artifactId>
-    <version>0.0.9-SNAPSHOT</version>
+    <version>0.0.8-SNAPSHOT</version>
     <name>nextg base</name>
     <packaging>war</packaging>
     <description>nextg base template</description>
