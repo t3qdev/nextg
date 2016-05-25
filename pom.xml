@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>kr.co.yonhapnews</groupId>
     <artifactId>nextg</artifactId>
-    <version>0.0.6</version>
+    <version>0.0.7-SNAPSHOT</version>
     <name>nextg base</name>
     <packaging>war</packaging>
     <description>nextg base template</description>
@@ -11,7 +11,7 @@
         <connection>scm:git:https://github.com/t3qdev/nextg.git</connection>
         <url>http://github.com/t3qdev/nextg</url>
         <developerConnection>scm:git:https://github.com/t3qdev/nextg.git</developerConnection>
-    <tag>nextg-0.0.6</tag>
+    <tag>HEAD</tag>
   </scm>
 
     <properties>
