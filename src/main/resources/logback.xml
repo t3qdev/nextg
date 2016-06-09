@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="true">
+
+    <appender name="LogStashFileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>/var/logs/logstash.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <fileNamePattern>/var/logs/logstash.log.%i</fileNamePattern>
+            <minIndex>0</minIndex>
+            <maxIndex>1</maxIndex>
+        </rollingPolicy>
+
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <maxFileSize>100MB</maxFileSize>
+        </triggeringPolicy>
+
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+            <fieldNames>
+                <timestamp>localtimestamp</timestamp>
+                <version>[ignore]</version>
+                <logger>[ignore]</logger>
+                <thread>[ignore]</thread>
+                <levelValue>[ignore]</levelValue>
+            </fieldNames>
+        </encoder>
+    </appender>
+
+    <logger name="LOGSTASH" level="DEBUG" additivity="false">
+        <appender-ref ref="LogStashFileAppender" />
+    </logger>
+
+    <root level="DEBUG">
+        <appender-ref ref="LogStashFileAppender" />
+    </root>
+
+</configuration>

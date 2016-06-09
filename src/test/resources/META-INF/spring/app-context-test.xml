@@ -4,49 +4,31 @@
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:tx="http://www.springframework.org/schema/tx"
 	xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xmlns:aop="http://www.springframework.org/schema/aop"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
 	http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+    http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
 	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd">
-
-    <bean id="localeResover" class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
-		<property name="cookieName" value="language"/>
-		<property name="cookieMaxAge" value="100000"/>
-		<property name="cookiePath" value="web/cookie"/>
-	</bean> 
-
-	<mvc:interceptors>
-		<bean id="localeChangeInterceptor" class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
-			<property name="paramName" value="lang"/>
-		</bean>
-	</mvc:interceptors>
-
-	<!-- 메시지를 읽어온다.   message.properties or message_로케일.properties 를 읽어 들임 -->
-<!--   	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource"> -->
-  	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
-		<property name="basenames" value="/META-INF/properties/message"/>
-		<property name="defaultEncoding" value="UTF-8"/>
-		<property name="cacheSeconds" value="180"/>
-	</bean> 
     
-    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-        <property name="locations">
-            <value>classpath:META-INF/properties/datasource.properties</value>
-        </property>
-    </bean>
-	
+    <!-- <aop:aspectj-autoproxy /> -->
+    
+    <!-- Root Context: defines shared resources visible to all other web components -->
     <context:component-scan base-package="kr.co.yonhapnews" use-default-filters="false">
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Component" />
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Repository" />
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Service" />
-        <!-- <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" /> -->
     </context:component-scan>
+
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <value>classpath:META-INF/properties/datasource.properties</value>
+        </property>
+    </bean>
 
     <import resource="classpath:META-INF/datasource/datasource-context.xml" />
     <import resource="classpath:META-INF/datasource/datasource-transaction.xml" />
     <import resource="classpath:META-INF/mybatis/mybatis-context.xml" />
-    <import resource="classpath:META-INF/spring/schedule-context.xml" />
-    <import resource="classpath:META-INF/spring/message-context.xml" />
     <import resource="classpath:META-INF/spring/ehcache-context.xml" />
     
 </beans>

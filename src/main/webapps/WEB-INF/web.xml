@@ -25,11 +25,9 @@ xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/
 	<context-param>
 	  <param-name>contextConfigLocation</param-name>
 	  <param-value> classpath:/META-INF/spring/app-context.xml
-	                /WEB-INF/spring/root-context.xml
 	  				/WEB-INF/spring/appServlet/security-context.xml
 	  </param-value>
 	</context-param>
-	
 	
     <!-- Security Filter  
 	<filter>

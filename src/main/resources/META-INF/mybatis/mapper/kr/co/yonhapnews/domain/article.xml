@@ -6,7 +6,7 @@
 	<cache/>
 	
 	
-	<select id="selListArticle" resultType="ArticleDVO">
+	<select id="selListArticle" resultType="kr.co.yonhapnews.domain.article.vo.ArticleDVO">
 		<![CDATA[
 			SELECT * FROM  ARTICLE  
 			ORDER BY IDX DESC 
@@ -15,7 +15,7 @@
 	</select>
 	
 	
-	<insert id="insArticle" parameterType="ArticleDVO">
+	<insert id="insArticle" parameterType="kr.co.yonhapnews.domain.article.vo.ArticleDVO">
 		<![CDATA[ 		
 		INSERT INTO ARTICLE (TITLE,CONTENT,WRITER,STATE,REGDATE) values (#{TITLE},#{CONTENT},#{WRITER},#{STATE},NOW())
 		]]>	
@@ -23,7 +23,7 @@
 
 
 
-	<select id="selArticle" parameterType="int" resultType="ArticleDVO" >
+	<select id="selArticle" parameterType="int" resultType="kr.co.yonhapnews.domain.article.vo.ArticleDVO" >
 		<![CDATA[
 			SELECT * FROM  ARTICLE WHERE IDX=#{IDX}
 		]]> 
