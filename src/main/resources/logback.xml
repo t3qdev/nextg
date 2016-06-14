@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration debug="true">
 
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%-5p: %c - %m%n</pattern>
+        </encoder>
+    </appender>
+
     <appender name="LogStashFileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>/var/logs/logstash.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
@@ -27,9 +33,27 @@
     <logger name="LOGSTASH" level="DEBUG" additivity="false">
         <appender-ref ref="LogStashFileAppender" />
     </logger>
+    
+    <logger name="kr.co.yonhapnews" level="DEBUG">
+    </logger>
+    
+    <logger name="org.springframework.core" level="WARN">
+    </logger>
+    
+    <logger name="org.springframework.beans" level="WARN">
+    </logger>
+    
+    <logger name="org.springframework.context" level="WARN">
+    </logger>
+
+    <logger name="org.springframework.web" level="WARN">
+    </logger>
+
+    <logger name="org.springframework" level="WARN">
+    </logger>
 
     <root level="DEBUG">
-        <appender-ref ref="LogStashFileAppender" />
+        <appender-ref ref="STDOUT" />
     </root>
 
 </configuration>

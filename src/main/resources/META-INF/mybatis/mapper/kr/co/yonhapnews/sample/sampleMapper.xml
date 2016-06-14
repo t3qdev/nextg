@@ -5,7 +5,7 @@
 
 	<select id="selectArticleList" resultType="kr.co.yonhapnews.sample.vo.SampleVo">
 		<![CDATA[
-			SELECT * FROM  ARTICLE  
+			SELECT * FROM SAMPLE  
 		]]> 
 	</select>
 
