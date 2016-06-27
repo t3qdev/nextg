@@ -10,7 +10,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import kr.co.yonhapnews.domain.article.vo.ArticleDVO;
 
-@ContextConfiguration(locations = "classpath:META-INF/spring/app-context.xml")
+@ContextConfiguration(locations = "classpath:META-INF/spring/app-context-test.xml")
 @RunWith(SpringJUnit4ClassRunner.class)
 public class ArticleDAOTest {
     

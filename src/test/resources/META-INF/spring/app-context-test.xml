@@ -30,5 +30,6 @@
     <import resource="classpath:META-INF/datasource/datasource-transaction.xml" />
     <import resource="classpath:META-INF/mybatis/mybatis-context.xml" />
     <import resource="classpath:META-INF/spring/ehcache-context.xml" />
+    <import resource="classpath:META-INF/spring/security-context.xml" />
     
 </beans>
