@@ -22,7 +22,7 @@
                     login-processing-url="/loginProcess"
                     username-parameter="id"
                     password-parameter="pw" 
-                    default-target-url="/loginSuccess"
+                    default-target-url="/article"
                     authentication-failure-url="/login"
                     always-use-default-target='true'
                     />
