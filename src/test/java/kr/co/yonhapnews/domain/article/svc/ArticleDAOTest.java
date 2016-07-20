@@ -19,7 +19,7 @@ public class ArticleDAOTest {
     
     @Test
     public void selArticle() {
-        ArticleDVO vo = articleDAO.selArticle(4);
+        ArticleDVO vo = articleDAO.selArticle(1);
         assertNotNull(vo);
     }
 }

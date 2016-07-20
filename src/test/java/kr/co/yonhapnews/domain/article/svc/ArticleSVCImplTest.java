@@ -20,7 +20,7 @@ public class ArticleSVCImplTest {
     
     @Test
     public void selArticle() {
-        ArticleSVO vo = articleSVC.selArticle(4);
+        ArticleSVO vo = articleSVC.selArticle(1);
         assertNotNull(vo);
     }
 }
